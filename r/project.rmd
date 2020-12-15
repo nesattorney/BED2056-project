@@ -1,0 +1,22 @@
+---
+title: "Data Science Project"
+author: "Eirik Pettersen, Lars Kristiansen and Marius Jørgensen"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(reticulate)
+use_python("/usr/local/bin/python3", required = T)
+```
+
+### Title
+
+```{python, engine.path = '/usr/local/bin/python3', echo=FALSE, message=FALSE, results='hide'}
+
+test = "This is a test"
+print(test)
+
+```
