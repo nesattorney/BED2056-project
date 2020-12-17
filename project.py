@@ -1,8 +1,68 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from us_states_abbrev import *
 import datetime
+
+us_state_abbrev = {
+    'Alabama': 'AL',
+    'Alaska': 'AK',
+    'American Samoa': 'AS',
+    'Arizona': 'AZ',
+    'Arkansas': 'AR',
+    'California': 'CA',
+    'Colorado': 'CO',
+    'Connecticut': 'CT',
+    'Delaware': 'DE',
+    'District of Columbia': 'DC',
+    'Florida': 'FL',
+    'Georgia': 'GA',
+    'Guam': 'GU',
+    'Hawaii': 'HI',
+    'Idaho': 'ID',
+    'Illinois': 'IL',
+    'Indiana': 'IN',
+    'Iowa': 'IA',
+    'Kansas': 'KS',
+    'Kentucky': 'KY',
+    'Louisiana': 'LA',
+    'Maine': 'ME',
+    'Maryland': 'MD',
+    'Massachusetts': 'MA',
+    'Michigan': 'MI',
+    'Minnesota': 'MN',
+    'Mississippi': 'MS',
+    'Missouri': 'MO',
+    'Montana': 'MT',
+    'Nebraska': 'NE',
+    'Nevada': 'NV',
+    'New Hampshire': 'NH',
+    'New Jersey': 'NJ',
+    'New Mexico': 'NM',
+    'New York': 'NY',
+    'North Carolina': 'NC',
+    'North Dakota': 'ND',
+    'Northern Mariana Islands':'MP',
+    'Ohio': 'OH',
+    'Oklahoma': 'OK',
+    'Oregon': 'OR',
+    'Pennsylvania': 'PA',
+    'Puerto Rico': 'PR',
+    'Rhode Island': 'RI',
+    'South Carolina': 'SC',
+    'South Dakota': 'SD',
+    'Tennessee': 'TN',
+    'Texas': 'TX',
+    'Utah': 'UT',
+    'Vermont': 'VT',
+    'Virgin Islands': 'VI',
+    'Virginia': 'VA',
+    'Washington': 'WA',
+    'West Virginia': 'WV',
+    'Wisconsin': 'WI',
+    'Wyoming': 'WY'
+}
+
+abbrev_us_state = dict(map(reversed, us_state_abbrev.items()))
 
 # Path to datasets
 covid_path = "data/covid/us_states_covid19_daily.csv"
@@ -35,20 +95,6 @@ stay_home_order_data = pd.read_csv(stay_home_order_path)
 # Convert state 2-letter code to full name
 covid_data['state'] = covid_data['state'].map(abbrev_us_state)
 traffic_data['state'] = traffic_data['state'].map(abbrev_us_state)
-
-
-# Discovers the states that are included in the Covid dataset but not the traffic dataset
-covid_unique = covid_data['state'].unique()
-traffic_unique = traffic_data['state'].unique()
-contains = False
-difference = []
-for covid_state in covid_unique:
-    for traffic_state in traffic_unique:
-        if covid_state == traffic_state:
-            contains = True
-    if contains == False:
-        difference.append(covid_state)
-    contains = False
 
 
 # Convert date column to datetime object
@@ -225,7 +271,10 @@ def plot_covid_state_bar(state, moving_avg_window):
     # Replace xtick label dates with corresponding month names.
     top.set_xticks(['2020-01-01', '2020-02-01', '2020-03-01', '2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01', '2020-10-01', '2020-11-01', '2020-12-01'])
     top.set_xticklabels(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
-    plt.savefig("figures/" + state, dpi=500)
+    
+    plt.subplots_adjust(right=0.82)
+    plt.savefig("figures/" + state, dpi=500, facecolor="#faf3ea")
+    #plt.show()
 
 
 def plot_covid_country_bar(moving_avg_window):
@@ -318,7 +367,15 @@ def plot_covid_country_bar(moving_avg_window):
     # Replace xtick label dates with corresponding month names.
     top.set_xticks(['2020-01-01', '2020-02-01', '2020-03-01', '2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01', '2020-10-01', '2020-11-01', '2020-12-01'])
     top.set_xticklabels(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
-    plt.savefig("figures/USA", dpi=500)
+    plt.savefig("figures/USA", dpi=500, facecolor="#faf3ea")
+    #plt.show()
 
 
 plot_covid_country_bar(21)
+
+
+#faf3ea
+
+for x in stay_home_order_data['State']:
+    plot_covid_state_bar(x, 21)
+    #break
