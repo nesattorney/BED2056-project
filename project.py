@@ -227,13 +227,13 @@ def plot_covid_state_bar(state, moving_avg_window):
     if stay_at_home_start_date != None:
         stay_at_home_start_date = '2020-' + str(stay_at_home_start_date)
         stay_at_home_start_date = datetime.datetime.strptime(stay_at_home_start_date, '%Y-%d-%m').date()
-        top.axvline(x=stay_at_home_start_date, color='#F3B61F', label='Stay at home order start')
+        top.axvline(x=stay_at_home_start_date, color='#F3B61F', label='Stay-at-home order start')
 
     # Plot the stay at home end date
     if stay_at_home_end_date != None:
         stay_at_home_end_date = '2020-' + str(stay_at_home_end_date)
         stay_at_home_end_date = datetime.datetime.strptime(stay_at_home_end_date, '%Y-%d-%m').date()
-        top.axvline(x=stay_at_home_end_date, color='#90E39A', label='Stay at home order end')
+        top.axvline(x=stay_at_home_end_date, color='#90E39A', label='Stay-at-home order end')
 
     # Plot the traffic accidents
     top.plot(dates_traffic_2018, accidents_2018, color='white', label='2018')
