@@ -15,6 +15,9 @@ Group project for Marius, Lars Kristian and Eirik
     * Step 5: Run the python script <code>project.py</code> to generate the the figures.
         * <code>$ python3 project.py</code>
     * Step 6: The plot for every state should appear in the <code>/figures</code> folder.
+* The file <code>project.rmd</code> contains the details in our steps when developing the solution.
+* The file <code>index.rmd</code> contains the contents for the public project website.
+    * Visit the public website at the url: https://nesattorney.github.io/BED2056-project/ 
 
 ## Sources
 
