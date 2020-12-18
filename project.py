@@ -273,7 +273,7 @@ def plot_covid_state_bar(state, moving_avg_window):
     top.set_xticklabels(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
     
     plt.subplots_adjust(right=0.82)
-    plt.savefig("figures/" + state, dpi=500, facecolor="#faf3ea")
+    plt.savefig("figures/" + state, dpi=250, facecolor="#faf3ea")
     #plt.show()
 
 
@@ -367,7 +367,7 @@ def plot_covid_country_bar(moving_avg_window):
     # Replace xtick label dates with corresponding month names.
     top.set_xticks(['2020-01-01', '2020-02-01', '2020-03-01', '2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01', '2020-10-01', '2020-11-01', '2020-12-01'])
     top.set_xticklabels(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
-    plt.savefig("figures/USA", dpi=500, facecolor="#faf3ea")
+    plt.savefig("figures/USA", dpi=250, facecolor="#faf3ea")
     #plt.show()
 
 

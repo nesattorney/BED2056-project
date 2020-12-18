@@ -4,7 +4,7 @@ Group project for Marius, Lars Kristian and Eirik
 ## How to run the project
 
 * Zip file with all datasets used in this analysis:
-    * https://drive.google.com/file/d/1sK9ihAODzPqwQNuXjyRoBxhtHhEW_N-8/view?usp=sharing
+    * https://drive.google.com/file/d/1DUXNfFXR6I1tOX8W6J1_vE_9P7UiC6LC/view?usp=sharing
     * Step 1: Unzip the file.
     * Step 2: Clone the github project at the URL: https://github.com/nesattorney/BED2056-project
     * Step 3: Place the unzipped data folder inside github project folder

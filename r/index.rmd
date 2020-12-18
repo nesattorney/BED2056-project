@@ -37,7 +37,7 @@ body {
 
 
 <div class="header">
-  <h3>Has the COVID-19 pandemic affected the number of traffic accidents in USA?</h3>
+  <h3>Has Covid-19 affected traffic accidents in the USA?</h3>
   <hr style="border-top: 1px solid rgb(180, 180, 180);" />
   <p style="text-align: right;">
   Lars Kristiansen, Eirik Pettersen and Marius Jørgensen
